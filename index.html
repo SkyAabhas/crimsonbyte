@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimsonByte Interactive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            font-size: 1.5rem;
+            color: #dc143c;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 2rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #dc143c;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        nav ul li a.active {
+            color: #dc143c;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #dc143c;
+        }
+        section p, section ul {
+            max-width: 800px;
+            margin-bottom: 1rem;
+        }
+
+        /* Team */
+        .team-member {
+            display: inline-block;
+            margin: 1rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(220,20,60,0.5);
+        }
+
+        /* Projects */
+        .project {
+            background-color: #1e1e1e;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(220,20,60,0.5);
+        }
+
+        /* Contact */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin-left: 1rem;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+            .team-member {
+                display: block;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CrimsonByte Interactive</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#team">The Team</a></li>
+            <li><a href="#upcoming">Upcoming Project</a></li>
+            <li><a href="#current">Currently Working On</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About</h2>
+    <p>CrimsonByte Interactive is an independent technology and game development company focused on creating immersive, story-driven digital experiences. Serving as the parent company, it oversees vision, technology, and long-term strategy, while its subsidiary, CrimsonForge Studios, handles core game development and creative execution. Together, they aim to build original, grounded, and meaningful games with a strong focus on storytelling and gameplay innovation.<br>
+Aabhas Dubey is the Managing Director (MD) of CrimsonByte Interactive, leading the company’s overall direction and growth.</p>
+</section>
+
+<section id="team">
+    <h2>The Team</h2>
+    <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member 1">
+        <p>Aabhas Dubey - CEO & Lead Developer</p>
+    </div>
+    <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Team Member 2">
+        <p>Yukta - Creative Director</p>
+    </div>
+</section>
+
+<section id="upcoming">
+    <h2>Upcoming Project</h2>
+    <div class="project">
+        <h3>Project Streets</h3>
+        <p>Streets is an ambitious, narrative-driven game universe exploring power, ambition, and survival across interconnected stories. Each title within the Streets universe presents a grounded and intense perspective, creating a larger world shaped by choices, conflict, and consequence.</p>
+    </div>
+</section>
+
+<section id="current">
+    <h2>Currently Working On</h2>
+    <div class="project">
+        <h3>Chaiwala Tycoon</h3>
+        <p>Chaiwala Tycoon is a simulation-based game centered around building and scaling a chai business from a humble stall into a thriving enterprise. The project focuses on progression, strategy, and the everyday hustle, delivering a grounded and relatable gameplay experience.</p>
+    </div>
+    <div class="project">
+        <h3>CrimsonCore™</h3>
+        <p>CrimsonCore™ is a proprietary C++-based game engine currently in development, built to power the Streets Universe and future in-house projects with a focus on performance, scalability, and creative freedom.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <p>Phone: +919407872368</p>
+        <p>Email: info@crimsonbyte.com</p>
+	      <p>© 2025 CrimsonByte Interactive. All rights reserved.<br>
+CrimsonCore™ is proprietary software developed by CrimsonByte Interactive.<br>
+Unauthorized use, reproduction, or distribution is strictly prohibited.</p>
+    </div>
+</section>
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Section reveal on scroll
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Navbar active link highlight
+    const navLinks = document.querySelectorAll('nav ul li a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if(scrollY >= sectionTop){
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`){
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
